@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Pied_piper"
+run/main_scene="uid://4l6r81l2f3qa"
+config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="res://icon.svg"
+
+[audio]
+
+driver/enable_input=true
+
+[autoload]
+
+PitchDetectorServer="*uid://56urrunlbiv2"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/note_detector/plugin.cfg")
+
+[input]
+
+left_note={
+"deadzone": 0.2,
+"events": []
+}
+right_note={
+"deadzone": 0.2,
+"events": []
+}
+up_note={
+"deadzone": 0.2,
+"events": []
+}
+down_note={
+"deadzone": 0.2,
+"events": []
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

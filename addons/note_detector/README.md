@@ -1,0 +1,76 @@
+# Godot Note Pitch Detector Addon ♪
+
+Adds a `NoteDetector` node that emits signals when it detects musical notes from the microphone.
+
+Useful for creating musical games, interactive toys, visualizers, etc.
+
+![Inspector Screenshot](https://github.com/yotam-frid/godot-note-pitch-detector/blob/main/images/screenshot.png?raw=true)
+
+## Prerequisites
+
+Enable the addon in the project settings:
+
+`Project Settings > Plugins > Enable 'Note Pitch Detector'`
+
+You also need to enable audio input:
+
+`Project Settings > Audio > Driver > Enable Audio Input`
+
+Make sure to select the audio input device you want to use.
+By default, the addon selects the system's default audio input device (device 0).
+
+```gdscript
+# Get a list of strings representing the available audio devices
+# You can put this in a UI to allow the user to select the input device
+var devices = AudioServer.get_input_device_list()
+
+# Set the audio input device
+AudioServer.input_device = devices[0]
+```
+
+## Usage
+
+Place a `NoteDetector` node in your scene and connect the signals to your own logic.
+
+```gdscript
+@onready var note_detector = $NoteDetector
+
+func _ready() -> void:
+  note_detector.detect_note_started.connect(on_note_started)
+
+func on_note_started(event: NoteDetectEvent) -> void:
+  print("Note detected: ", event.note_name)
+```
+
+### Detection Algorithm
+
+Note detection is always *monophonic*, meaning it only detects one note at a time.
+
+The addon uses autocorrelation by default. This is a fast and simple algorithm that works well for most instruments, but may pick up silence and noise as notes.
+You can optionally use YIN, which might be better for voice, wind instruments, etc.
+
+```gdscript
+PitchDetectorServer.algorithm = PitchDetectorServer.Algorithm.YIN
+```
+
+Read more: https://www.hyuncat.com/blog/yin/
+
+## API
+#### Node Properties
+- `threshold`: The duration (in milliseconds) a note has to be sustained before the detection signal is emitted.
+- `release`: The duration (in milliseconds) a note has to be released before the detection signal is emitted.
+- `grace_period`: The duration (in milliseconds) a note can be "not detected" during buildup before the buildup is cancelled.
+- `transpose`: The number of semitones to transpose the detected note.
+
+#### Signals
+- `detect_note_started(event: NoteDetectEvent)`: Emitted when a note is detected.
+- `detect_note_stopped(event: NoteDetectEvent)`: Emitted when a note is no longer detected.
+- `detect_started`: Emitted when the note detector starts detecting notes (after silence).
+- `detect_stopped`: Emitted when the note detector stops detecting notes (silence).
+
+#### NoteDetectEvent
+
+- `note_name`: The name of the note (e.g. "C", "C#", "D", etc.).
+- `note_full_name`: The full name of the note (e.g. "C#3", "D4", etc.).
+- `note_index`: The index of the note (0 = C0, 1 = C#0, 12 = C1, etc.).
+- `note_octave`: The octave of the note (0 = C0, 1 = C1, etc.).
