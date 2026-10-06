@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 const speed = 10
+const note_map = {
+	"B": "left_note"
+}
 #const SPEED = 300.0
 #var input: Vector2
 
@@ -9,29 +12,34 @@ const speed = 10
 func _ready() -> void:
 	note_detector.detect_note_started.connect(on_note_started)
 
-func on_note_started(event: NoteDetectEvent):
-# -> void:
-	print("Note detected: ", event.note_name)
-	var note = event.note_name
-	return note
 
-func event_trigger(note,note_name,action_name):
-	note_name = on_note_started(note)
-	if note_name == "C":
-		action_name = "note_left"
-	_trigger_action(action_name, true)
+func on_note_started(event: NoteDetectEvent) -> void:
+	var note = event.note_name
+	print("Note detected: ", note)
+	if note in note_map:
+		var note_direction = note_map[note]
+		note_input(note_direction, true)
+	else:
+		pass
+
 	
-func _trigger_action(action_name, is_pressed):
-	var ev = InputEventAction.new()
-	# Set as left_note, pressed.
-	ev.action = action_name
-	ev.pressed = is_pressed
-	Input.parse_input_event(ev)
+func note_input(note_direction: String, is_pressed: bool) -> void:
+	var event = InputEventAction.new()
 	
-func _unhandled_input(event):
-	Input.get_vector("left_note","right_note","down_note","up_note")
-	if event.is_action_pressed("left_note"):
-		print()
+	# Set as action_name, pressed.
+	event.action = note_direction
+	event.pressed = is_pressed
+	
+	Input.parse_input_event(event)
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("left_note"):
+			print("wowowowowo")
+#func unhandled_input(event)-> void:
+#	Input.get_vector("left_note","right_note","down_note","up_note")
+#	if event.is_action_pressed("left_note"):
+#		print("left_note has been sounded.")
+
 
 
 #func update_velocity() -> void: 
