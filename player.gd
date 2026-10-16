@@ -1,9 +1,11 @@
 extends CharacterBody2D
-
-const speed = 10
+#var move_direction = up
+const move_speed = 10
 const note_map = {
 	"B": "left_note"
 }
+var target_velocity = Vector2.ZERO
+#var input_direction: float = 0.0
 #const SPEED = 300.0
 #var input: Vector2
 
@@ -19,6 +21,9 @@ func on_note_started(event: NoteDetectEvent) -> void:
 	if note in note_map:
 		var note_direction = note_map[note]
 		note_input(note_direction, true)
+		
+		#this turns off the note 
+		note_input(note_direction, false)
 	else:
 		pass
 
@@ -33,12 +38,23 @@ func note_input(note_direction: String, is_pressed: bool) -> void:
 	Input.parse_input_event(event)
 
 func _physics_process(delta: float) -> void:
+	var input_direction = Vector2.ZERO
+	#var move_direction = up
 	if Input.is_action_just_pressed("left_note"):
-			print("wowowowowo")
-#func unhandled_input(event)-> void:
-#	Input.get_vector("left_note","right_note","down_note","up_note")
-#	if event.is_action_pressed("left_note"):
-#		print("left_note has been sounded.")
+		print("triggered")
+		input_direction.x = -10.0
+	target_velocity.x = move_speed * input_direction.x
+	target_velocity.y = move_speed * input_direction.y
+	velocity = target_velocity
+	move_and_slide()
+	
+#func movement():
+#	var input_direction = Vector2.ZERO
+#	if Input.is_action_just_pressed("left_note"):
+		#print("triggered")
+#		input_direction.x = -1.0
+		
+
 
 
 
