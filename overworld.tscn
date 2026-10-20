@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://cexrpq3ki4jcw"]
 
 [ext_resource type="PackedScene" uid="uid://4l6r81l2f3qa" path="res://player.tscn" id="1_6jwp1"]
+[ext_resource type="Script" uid="uid://b0rl4g543opdx" path="res://gameplay.gd" id="1_nyb65"]
+[ext_resource type="Script" uid="uid://dsnggnmc5iwky" path="res://addons/note_detector/note_detector.gd" id="3_824ie"]
 
 [node name="main" type="Node2D" unique_id=668073929]
+script = ExtResource("1_nyb65")
+
+[node name="NoteDetector" type="Node" parent="." unique_id=250943910]
+script = ExtResource("3_824ie")
+metadata/_custom_type_script = "uid://dsnggnmc5iwky"
 
 [node name="CharacterBody2D" parent="." unique_id=1045265174 instance=ExtResource("1_6jwp1")]
+position = Vector2(402, 174)
