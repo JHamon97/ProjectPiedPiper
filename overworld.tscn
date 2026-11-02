@@ -12,4 +12,4 @@ script = ExtResource("3_824ie")
 metadata/_custom_type_script = "uid://dsnggnmc5iwky"
 
 [node name="CharacterBody2D" parent="." unique_id=1045265174 instance=ExtResource("1_6jwp1")]
-position = Vector2(402, 174)
+position = Vector2(518, 310)

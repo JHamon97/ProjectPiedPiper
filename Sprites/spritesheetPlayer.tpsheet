@@ -1,0 +1,33 @@
+{
+	"textures": [
+		{
+			"image": "spritesheetPlayer.png",
+			"size": {
+				"w": 952,
+				"h": 1404
+			},
+			"sprites": [
+				{
+					"filename": "Sprite Final.png",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 950,
+						"h": 1401
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.1",
+		"smartupdate": "$TexturePacker:SmartUpdate:d93403573d0965b929e91f49334c7ec7:ee42f87c7c3f25f5bd3fafcea8cbd5b9:e69f0f00aea8768a0a35db2265ae4a9c$"
+	}
+}
