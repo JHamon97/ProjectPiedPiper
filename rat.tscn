@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bvanbkwnw604t"]
+
+[ext_resource type="Texture2D" uid="uid://bgprcsbw1vghe" path="res://Sprites/icon.svg" id="1_pmwci"]
+
+[node name="rat" type="CharacterBody2D" unique_id=1119059303]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1260100928]
+position = Vector2(407.00003, 168.00002)
+scale = Vector2(0.4921875, 0.46875)
+texture = ExtResource("1_pmwci")

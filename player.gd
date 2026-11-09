@@ -4,6 +4,9 @@ const grid_size = 64
 var current_direction: Vector2 = Vector2.RIGHT  # Starting direction
 var next_direction: Vector2 = Vector2.RIGHT     # Buffered next direction
 
+#var current_direction: Vector2 = Vector2.RIGHT  # Starting direction
+#var next_direction: Vector2 = Vector2.RIGHT  
+
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _ready() -> void:

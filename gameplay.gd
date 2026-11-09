@@ -25,12 +25,16 @@ func on_note_started(event: NoteDetectEvent) -> void:
 		var note_direction = note_map[note]
 		if old_note_direction == "NULL":
 			note_input(note_direction, true)
+		elif old_note_direction == "left_note" and note_direction == "right_note" or old_note_direction == "right_note" and note_direction == "left_note":
+			note_input(note_direction, false)
+		elif old_note_direction == "up_note" and note_direction == "down_note" or old_note_direction == "down_note" and note_direction == "up_note":
+			note_input(note_direction, false)
 		elif note_direction != old_note_direction:
 			note_input(old_note_direction, false)
 			note_input(note_direction, true)
 		else:
 			note_input(note_direction, true)
-		old_note_direction = note_direction	
+		old_note_direction = note_direction
 	else:
 		pass
 
