@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+#all of this can be replaced by April
 @onready var sprite: Sprite2D = $Sprite2D
 
 var _target_pos: Vector2
