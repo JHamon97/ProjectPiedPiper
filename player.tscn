@@ -352,8 +352,8 @@ position = Vector2(47, 22)
 shape = SubResource("CapsuleShape2D_57qmd")
 
 [node name="Note_direction" type="AnimatedSprite2D" parent="." unique_id=825331721]
-position = Vector2(52, -70)
+position = Vector2(50, -123)
+scale = Vector2(3.53125, 2.8281252)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"A#left"
-frame = 3
-frame_progress = 0.021844653
+frame_progress = 0.39754272

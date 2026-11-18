@@ -1,13 +1,13 @@
 class_name Player extends CharacterBody2D
 const speed:int = 0.25
 const grid_size = 64
-const RAT_SCENE_PRELOAD = preload("res://rat.tscn")
+#const RAT_SCENE_PRELOD = preload("res://raAt.tscn")
 
 var current_direction: Vector2 = Vector2.RIGHT  # Starting direction
 var next_direction: Vector2 = Vector2.RIGHT     # Buffered next direction
-var followers: Array[Node2D] = []
-var distance_spacing: int = 1
-var _trail_points: Array[Vector2] = []
+#var followers: Array[Node2D] = []
+#var distance_spacing: int = 1
+#var _trail_points: Array[Vector2] = []
 
 #var current_direction: Vector2 = Vector2.RIGHT  # Starting direction
 #var next_direction: Vector2 = Vector2.RIGHT  

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2yclyemkhesr"
-path="res://.godot/imported/player_spritesheet.png-c9895101c1dfecf6f804bfec961ca441.ctex"
+uid="uid://do41kleii4f33"
+path="res://.godot/imported/F_flute.png-62d64be004605f0d9a61eab48795a327.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/player_spritesheet.png"
-dest_files=["res://.godot/imported/player_spritesheet.png-c9895101c1dfecf6f804bfec961ca441.ctex"]
+source_file="res://Sprites/note_sprites_godot/F_flute.png"
+dest_files=["res://.godot/imported/F_flute.png-62d64be004605f0d9a61eab48795a327.ctex"]
 
 [params]
 
