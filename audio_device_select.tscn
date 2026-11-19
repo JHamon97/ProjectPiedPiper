@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ch2xvwm8nihcu"]
 
-[ext_resource type="Script" uid="uid://dytmtajf1llti" path="res://button_container.gd" id="1_x80hs"]
+[ext_resource type="Script" uid="uid://dytmtajf1llti" path="res://Scripts/button_container.gd" id="1_x80hs"]
 
 [node name="audioDeviceSelect" type="Node2D" unique_id=2142972749]
 
