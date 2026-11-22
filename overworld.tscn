@@ -80,7 +80,7 @@ tile_set = SubResource("TileSet_g4v7s")
 position = Vector2(574, 344)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=594675307]
-position = Vector2(638, 465)
+position = Vector2(636, 469)
 zoom = Vector2(0.8, 0.8)
 
 [node name="BlankFlute" type="Sprite2D" parent="." unique_id=698654523]

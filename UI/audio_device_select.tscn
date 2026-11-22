@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ch2xvwm8nihcu"]
+
+[ext_resource type="Script" uid="uid://dytmtajf1llti" path="res://UI/button_container.gd" id="1_j8yub"]
+[ext_resource type="Theme" uid="uid://dlnxgc6bym2b8" path="res://UI/base_theme.tres" id="1_lgh2o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgh2o"]
+font_size = 40
+font_color = Color(0.40784314, 1, 1, 1)
+
+[node name="audioDeviceSelect" type="Control" unique_id=974602260]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lgh2o")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=145538595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1799084410]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1406661880]
+layout_mode = 2
+script = ExtResource("1_j8yub")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=720054044]
+layout_mode = 2
+text = "Please select prefered audio input:
+"
+label_settings = SubResource("LabelSettings_lgh2o")
