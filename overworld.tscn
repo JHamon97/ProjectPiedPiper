@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cnct6v1cvb7a5" path="res://Sprites/note_sprites_godot/kitchen_floor.png" id="3_omswd"]
 [ext_resource type="Texture2D" uid="uid://cm8apuxt20f3f" path="res://Sprites/note_sprites_godot/Kitchen_floor_panels.png" id="4_m4qw5"]
 [ext_resource type="Texture2D" uid="uid://bx8twdr4ub1p2" path="res://Sprites/note_sprites_godot/blank_flute.png" id="6_m4qw5"]
+[ext_resource type="Script" uid="uid://dsao20ei088vh" path="res://flute_UI.gd" id="7_87uyu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87uyu"]
 texture = ExtResource("3_omswd")
@@ -87,3 +88,4 @@ zoom = Vector2(0.8, 0.8)
 position = Vector2(1272.0001, 476.99997)
 scale = Vector2(9.54, 9.638236)
 texture = ExtResource("6_m4qw5")
+script = ExtResource("7_87uyu")

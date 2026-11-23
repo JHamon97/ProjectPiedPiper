@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cxw42v8gncx7n"]
 
+[ext_resource type="Script" uid="uid://deed0c8d15vus" path="res://UI/menu_container.gd" id="1_p8ccj"]
+[ext_resource type="Theme" uid="uid://dlnxgc6bym2b8" path="res://UI/base_theme.tres" id="1_tk8dj"]
+
 [node name="main_menu" type="Control" unique_id=1713203812]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_tk8dj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1916394845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=542787986]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=495363491]
+layout_mode = 2
+script = ExtResource("1_p8ccj")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=2106368542]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.40784314, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Project Pied Piper"

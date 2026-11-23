@@ -3,6 +3,7 @@ extends VBoxContainer
 
 var packed_devices = AudioServer.get_input_device_list()
 var unpacked_devices: Array[String] = Array(Array(AudioServer.get_input_device_list()), TYPE_STRING, "", null)
+
 #var scene_path = 'res://UI/main_menu.tscn'
 func _ready() -> void:
 	button_array(unpacked_devices)
