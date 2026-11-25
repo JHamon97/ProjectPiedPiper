@@ -1,12 +1,14 @@
 [gd_scene format=4 uid="uid://bvjx3fc2fakfl"]
 
 [ext_resource type="SpriteFrames" uid="uid://5c1r66ge38r5" path="res://Sprites/Sprite_frames/Player_sprite_frames.tres" id="1_i14dg"]
+[ext_resource type="Script" uid="uid://dodb3ywbir6gq" path="res://Tutorial/tutorial_1.gd" id="1_rxjdy"]
 [ext_resource type="Theme" uid="uid://dlnxgc6bym2b8" path="res://UI/base_theme.tres" id="2_kknfq"]
 [ext_resource type="Texture2D" uid="uid://bx8twdr4ub1p2" path="res://Sprites/note_sprites_godot/blank_flute.png" id="3_0v21r"]
 [ext_resource type="TileSet" uid="uid://bicudppls7irl" path="res://Sprites/Tile_maps/Tile_set_kitchen.tres" id="3_rxjdy"]
 [ext_resource type="SpriteFrames" uid="uid://bfplneo6qjwl3" path="res://Sprites/Sprite_frames/Music_note_sprite_frames.tres" id="5_jqqds"]
 
 [node name="Node2D" type="Node2D" unique_id=1069305633]
+script = ExtResource("1_rxjdy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1279639293]
 layer = -1

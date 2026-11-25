@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cd0nvpmd2kpie"]
+
+[ext_resource type="Script" uid="uid://dy174omxdlodk" path="res://UI/Recorder_UI/flute_ui.gd" id="1_5lgif"]
+[ext_resource type="Script" uid="uid://dsnggnmc5iwky" path="res://addons/note_detector/note_detector.gd" id="2_td1ka"]
+[ext_resource type="Texture2D" uid="uid://bx8twdr4ub1p2" path="res://Sprites/note_sprites_godot/blank_flute.png" id="3_axjyn"]
+
+[node name="Control" type="Control" unique_id=421417526]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 585.0
+offset_top = 279.0
+offset_right = 585.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5lgif")
+
+[node name="NoteDetector" type="Node" parent="." unique_id=1566768855]
+script = ExtResource("2_td1ka")
+metadata/_custom_type_script = "uid://dsnggnmc5iwky"
+
+[node name="BlankFlute" type="Sprite2D" parent="." unique_id=824711228]
+position = Vector2(-2.999939, 3.0000153)
+scale = Vector2(8.09, 9.055882)
+texture = ExtResource("3_axjyn")

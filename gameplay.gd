@@ -11,27 +11,22 @@ const note_map = {
 var old_note_direction = "NULL"
 #link to NoteDetector
 @onready var note_detector = $"NoteDetector"
-#@onready var BlankFlute = $"BlankFlute"
+@onready var ui_scene: PackedScene = preload("res://UI/Recorder_UI/FluteUI.tscn")
+@onready var flute_spawn_point: Marker2D = $Marker2D
 
 func _ready() -> void:
 	#connects to plugin
+	var instance := ui_scene.instantiate()
+	add_child(instance)
+	instance.global_position = flute_spawn_point.global_position
+	print(instance.global_position)
 	note_detector.detect_note_started.connect(on_note_started)
 
 #finds the correct direction in note map and puts values in note_input()
 func on_note_started(event: NoteDetectEvent) -> void:
 	var note = event.note_name
 	print("Note detected: ", note)
-	
-	#Im not sure if we can merge this into the
-	#note input without breaking somthing.
-	#if event.note_name == 'A#' or event.note_name == 'B':
-	#	BlankFlute.texture = A_sharp_flute
-	#if event.note_name == 'G#':
-	#	BlankFlute.texture = G_sharp_flute
-	#if event.note_name == 'G':
-	#	BlankFlute.texture = G_flute
-	#if event.note_name == 'F':
-	#	BlankFlute.texture = F_flute			
+
 	#Nested if statement, I dont like it but it works.
 	if note in note_map:
 		var note_direction = note_map[note]
