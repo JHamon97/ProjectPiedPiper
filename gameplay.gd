@@ -19,7 +19,7 @@ func _ready() -> void:
 	var instance := ui_scene.instantiate()
 	add_child(instance)
 	instance.global_position = flute_spawn_point.global_position
-	print(instance.global_position)
+	#print(instance.global_position)
 	note_detector.detect_note_started.connect(on_note_started)
 
 #finds the correct direction in note map and puts values in note_input()

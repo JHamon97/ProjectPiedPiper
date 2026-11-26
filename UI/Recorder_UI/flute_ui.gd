@@ -26,5 +26,5 @@ func on_note_started(event: NoteDetectEvent) -> void:
 		#note_detector.detect_note_stopped.connect(on_note_ended)
 
 func on_note_ended(_event: NoteDetectEvent) -> void:
-	print("Note stopped")
+	#print("Note stopped")
 	BlankFlute.texture = blank_flute

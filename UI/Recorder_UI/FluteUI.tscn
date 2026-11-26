@@ -22,6 +22,6 @@ script = ExtResource("2_td1ka")
 metadata/_custom_type_script = "uid://dsnggnmc5iwky"
 
 [node name="BlankFlute" type="Sprite2D" parent="." unique_id=824711228]
-position = Vector2(-2.999939, 3.0000153)
+position = Vector2(60, 4.999999)
 scale = Vector2(8.09, 9.055882)
 texture = ExtResource("3_axjyn")
